@@ -33,7 +33,11 @@ impl eframe::App for ZgadnijSlowo {
                 column[0].vertical_centered_justified(|ui| {
                     if ui.add(egui::Button::new("Trzy litery").sense(Sense::click())).clicked() {
                         self.tryb_gry = 3;
-                        (self.wybór_słownictwa,self.podpowiedź) = losowe_słowo_3();
+                        (self.wybór_słownictwa,self.podpowiedź) =
+                            match losowe_słowo_3(){
+                                (x,y) if x.len() ==3  => (x,y),
+                                _ => losowe_słowo_3()
+                            };
 
 
                         reset_wsio(self);
@@ -48,7 +52,12 @@ impl eframe::App for ZgadnijSlowo {
                 column[1].vertical_centered_justified(|ui| {
                     if ui.add(egui::Button::new("Cztery litery").sense(Sense::click())).clicked() {
                         self.tryb_gry = 4;
-                        (self.wybór_słownictwa,self.podpowiedź) = losowe_słowo_4();
+
+                        (self.wybór_słownictwa,self.podpowiedź) =
+                            match losowe_słowo_4(){
+                                (x,y) if x.len() ==4  => (x,y),
+                                _ => losowe_słowo_4()
+                            };
 
                         reset_wsio(self);
                         fn losowe_słowo_4() -> (&'static str,&'static str) {
@@ -61,7 +70,11 @@ impl eframe::App for ZgadnijSlowo {
                 column[2].vertical_centered_justified(|ui| {
                     if ui.add(egui::Button::new("Pięć liter").sense(Sense::click())).clicked() {
                         self.tryb_gry = 5;
-                        (self.wybór_słownictwa,self.podpowiedź) = losowe_słowo_5();
+                        (self.wybór_słownictwa,self.podpowiedź) =
+                            match losowe_słowo_5(){
+                            (x,y) if x.len() ==5  => (x,y),
+                            _ => losowe_słowo_5()
+                        };
 
                         reset_wsio(self);
                         fn losowe_słowo_5() -> (&'static str,&'static str) {
@@ -79,14 +92,16 @@ impl eframe::App for ZgadnijSlowo {
         });
         let xoxo = ctx.screen_rect().size().x;
         egui::Area::new(egui::Id::new("Wygrana_tekst"))
-            .fixed_pos(pos2((xoxo / 2.) - 100., 150.))
+            .fixed_pos(pos2((xoxo / 2.) - 100., 120.))
             .default_size(egui::Vec2::new(100., 100.))
             .show(ctx, |ui| {
                 // ui.add(egui::Label::new(RichText::new("LOL!!!!!!!!!!").size(20.)));
                 ui.allocate_space(egui::Vec2::new(250., 50.));
                 match &self.wygrałeś{
                     true => {ui.add(egui::Label::new(RichText::new("Wygrałeś!!!").size(40.).color(Color32::GREEN)));},
-                    false=>{}
+                    false=>{
+                        // ui.add(egui::Label::new(RichText::new("Wygrałeś!!!").size(40.).color(Color32::GREEN)));
+                    }
                 }
 
             });

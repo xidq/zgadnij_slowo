@@ -3,6 +3,14 @@ use eframe::emath::{pos2, vec2};
 use egui::{emath, Color32, RichText, TextEdit, Ui};
 use crate::ui::ui_defaults::ZgadnijSlowo;
 
+
+
+
+
+// Yeah, i know i can do that in loops etc,
+// but i wanna do that like that, coz i can
+
+
 pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,słowo:&str){
     // println!("wygrałeś {}",&proxy_self.wygrałeś);
     ui.horizontal(|ui|{
