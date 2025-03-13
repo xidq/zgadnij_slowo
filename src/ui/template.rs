@@ -12,7 +12,7 @@ use crate::ui::ui_defaults::ZgadnijSlowo;
 // I think loops need more memory etc
 
 
-pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ‚owo:&str){
+pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,_ctx: &egui::Context,sÅ‚owo:&str){
     // println!("wygraÅ‚eÅ› {}",&proxy_self.wygraÅ‚eÅ›);
     ui.horizontal(|ui|{
             let mut kolor :Color32 = Default::default();
@@ -39,7 +39,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                     proxy_self.rzÄ…d_0_0=0;
                 }
             }
-            if proxy_self.litera_0_0.len() >=1{
+            if !proxy_self.litera_0_0.is_empty(){
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
                 ui.label(RichText::new(proxy_self.litera_0_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -72,7 +72,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                     proxy_self.rzÄ…d_0_1=0;
                 }
             }
-            if proxy_self.litera_0_1.len() >=1{
+            if !proxy_self.litera_0_1.is_empty(){
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
                 ui.label(RichText::new(proxy_self.litera_0_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -104,7 +104,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                     proxy_self.rzÄ…d_0_2=0;
                 }
             }
-            if proxy_self.litera_0_2.len() >=1{
+            if !proxy_self.litera_0_2.is_empty(){
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
                 ui.label(RichText::new(proxy_self.litera_0_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
                 ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -117,10 +117,10 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
     ui.add_space(proxy_self.rozmiar_spacji_litery * 2.);
 
     // drugi rzÄ…d
-    
+
     let checker_0 = proxy_self.rzÄ…d_0_0 >= 1 && proxy_self.rzÄ…d_0_1 >= 1 && proxy_self.rzÄ…d_0_2 >= 1 && !proxy_self.wygraÅ‚eÅ›;
     if checker_0{ui.add_space(proxy_self.rozmiar_spacji_litery);}
-    
+
     ui.horizontal(|ui|{
         // println!("{} {} {}",proxy_self.rzÄ…d_0_0,proxy_self.rzÄ…d_0_1, proxy_self.rzÄ…d_0_2);
 
@@ -150,7 +150,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_0.len() >=1{
+        if !proxy_self.litera_1_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -184,7 +184,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_1.len() >=1{
+        if !proxy_self.litera_1_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -218,7 +218,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_2.len() >=1{
+        if !proxy_self.litera_1_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -266,7 +266,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_0.len() >=1{
+        if !proxy_self.litera_2_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -300,7 +300,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_1.len() >=1{
+        if !proxy_self.litera_2_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -334,7 +334,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_2.len() >=1{
+        if !proxy_self.litera_2_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -382,7 +382,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_0.len() >=1{
+        if !proxy_self.litera_3_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -416,7 +416,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_1.len() >=1{
+        if !proxy_self.litera_3_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -450,7 +450,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_2.len() >=1{
+        if !proxy_self.litera_3_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -464,7 +464,7 @@ pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
     if checker_2{ proxy_self.wygraÅ‚eÅ› = proxy_self.rzÄ…d_3_0 == 2 && proxy_self.rzÄ…d_3_1 == 2 && proxy_self.rzÄ…d_3_2 == 2 } ;
 }
 
-pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ‚owo:&str){
+pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,_ctx: &egui::Context,sÅ‚owo:&str){
 
     ui.horizontal(|ui|{
         let mut kolor :Color32 = Default::default();
@@ -491,7 +491,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_0=0;
             }
         }
-        if proxy_self.litera_0_0.len() >=1{
+        if !proxy_self.litera_0_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -523,7 +523,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_1=0;
             }
         }
-        if proxy_self.litera_0_1.len() >=1{
+        if !proxy_self.litera_0_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -555,7 +555,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_2=0;
             }
         }
-        if proxy_self.litera_0_2.len() >=1{
+        if !proxy_self.litera_0_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -587,7 +587,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_3=0;
             }
         }
-        if proxy_self.litera_0_3.len() >=1{
+        if !proxy_self.litera_0_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -633,7 +633,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_0.len() >=1{
+        if !proxy_self.litera_1_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -667,7 +667,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_1.len() >=1{
+        if !proxy_self.litera_1_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -701,7 +701,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_2.len() >=1{
+        if !proxy_self.litera_1_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -735,7 +735,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_3.len() >=1{
+        if !proxy_self.litera_1_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -783,7 +783,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_0.len() >=1{
+        if !proxy_self.litera_2_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -817,7 +817,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_1.len() >=1{
+        if !proxy_self.litera_2_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -851,7 +851,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_2.len() >=1{
+        if !proxy_self.litera_2_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -860,7 +860,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 ui.add(TextEdit::singleline(&mut proxy_self.litera_2_2).background_color(Color32::GRAY).desired_width(proxy_self.rozmiar_pola_tekstowego_x).min_size(emath::vec2(proxy_self.rozmiar_pola_tekstowego_x, proxy_self.rozmiar_pola_tekstowego_y)))
             });
         }
-        
+
         let mut kolor :Color32 = Default::default();
         if checker_0 {
             match sÅ‚owo.chars().nth(3) {
@@ -886,7 +886,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_3.len() >=1{
+        if !proxy_self.litera_2_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -934,7 +934,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_0.len() >=1{
+        if !proxy_self.litera_3_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -968,7 +968,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_1.len() >=1{
+        if !proxy_self.litera_3_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1002,7 +1002,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_2.len() >=1{
+        if !proxy_self.litera_3_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1036,7 +1036,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_3.len() >=1{
+        if !proxy_self.litera_3_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1084,7 +1084,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_0.len() >=1{
+        if !proxy_self.litera_4_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1118,7 +1118,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_1.len() >=1{
+        if !proxy_self.litera_4_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1152,7 +1152,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_2.len() >=1{
+        if !proxy_self.litera_4_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1186,7 +1186,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_3.len() >=1{
+        if !proxy_self.litera_4_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1201,7 +1201,7 @@ pub fn templejt_4(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
 
 }
 
-pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ‚owo:&str){
+pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,_ctx: &egui::Context,sÅ‚owo:&str){
 
     ui.horizontal(|ui|{
         let mut kolor :Color32 = Default::default();
@@ -1228,7 +1228,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_0=0;
             }
         }
-        if proxy_self.litera_0_0.len() >=1{
+        if !proxy_self.litera_0_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1260,7 +1260,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_1=0;
             }
         }
-        if proxy_self.litera_0_1.len() >=1{
+        if !proxy_self.litera_0_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1292,7 +1292,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_2=0;
             }
         }
-        if proxy_self.litera_0_2.len() >=1{
+        if !proxy_self.litera_0_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1324,7 +1324,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_3=0;
             }
         }
-        if proxy_self.litera_0_3.len() >=1{
+        if !proxy_self.litera_0_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1355,7 +1355,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 proxy_self.rzÄ…d_0_4=0;
             }
         }
-        if proxy_self.litera_0_4.len() >=1{
+        if !proxy_self.litera_0_4.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_0_4.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1401,7 +1401,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_0.len() >=1{
+        if !proxy_self.litera_1_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1435,7 +1435,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_1.len() >=1{
+        if !proxy_self.litera_1_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1469,7 +1469,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_2.len() >=1{
+        if !proxy_self.litera_1_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1503,7 +1503,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_3.len() >=1{
+        if !proxy_self.litera_1_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1537,7 +1537,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_1_4.len() >=1{
+        if !proxy_self.litera_1_4.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_1_4.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1585,7 +1585,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_0.len() >=1{
+        if !proxy_self.litera_2_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1619,7 +1619,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_1.len() >=1{
+        if !proxy_self.litera_2_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1653,7 +1653,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_2.len() >=1{
+        if !proxy_self.litera_2_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1688,7 +1688,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_3.len() >=1{
+        if !proxy_self.litera_2_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1723,7 +1723,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_2_4.len() >=1{
+        if !proxy_self.litera_2_4.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_2_4.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1771,7 +1771,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_0.len() >=1{
+        if !proxy_self.litera_3_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1805,7 +1805,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_1.len() >=1{
+        if !proxy_self.litera_3_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1839,7 +1839,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_2.len() >=1{
+        if !proxy_self.litera_3_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1873,7 +1873,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_3.len() >=1{
+        if !proxy_self.litera_3_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1908,7 +1908,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_3_4.len() >=1{
+        if !proxy_self.litera_3_4.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_3_4.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1956,7 +1956,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_0.len() >=1{
+        if !proxy_self.litera_4_0.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_0.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -1990,7 +1990,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_1.len() >=1{
+        if !proxy_self.litera_4_1.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_1.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -2024,7 +2024,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_2.len() >=1{
+        if !proxy_self.litera_4_2.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_2.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -2058,7 +2058,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_3.len() >=1{
+        if !proxy_self.litera_4_3.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_3.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
@@ -2092,7 +2092,7 @@ pub fn templejt_5(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,sÅ
                 }
             }
         }
-        if proxy_self.litera_4_4.len() >=1{
+        if !proxy_self.litera_4_4.is_empty(){
             ui.add_space(proxy_self.rozmiar_spacji_litery);
             ui.label(RichText::new(proxy_self.litera_4_4.as_str().to_uppercase()).monospace().color(kolor).size(proxy_self.rozmiar_litery));
             ui.add_space(proxy_self.rozmiar_spacji_litery);
