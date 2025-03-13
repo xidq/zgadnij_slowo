@@ -1,5 +1,5 @@
-use egui::{pos2, vec2, Color32, Pos2, RichText, Sense, Vec2};
-use rand::{random, Rng};
+use egui::{pos2, vec2, Color32, RichText, Sense};
+use rand::Rng;
 use crate::ui::reset::reset_wsio;
 use crate::ui::slowniki::{Słowa, Wybieranie};
 // use egui::WidgetText::RichText;
@@ -49,7 +49,7 @@ impl eframe::App for ZgadnijSlowo {
                     }
                     ui.add(egui::Label::new(RichText::new(format!("{} słów",Słowa::trzyliterowe().słowo.len()))).selectable(false));
                 });
-                let zzzz = Słowa::trzyliterowe().słowo[1];
+                // let zzzz = Słowa::trzyliterowe().słowo[1];
                 column[1].vertical_centered_justified(|ui| {
                     if ui.add(egui::Button::new("Cztery litery").min_size(vec2(20.,50.)).sense(Sense::click())).clicked() {
                         self.tryb_gry = 4;
@@ -100,7 +100,7 @@ impl eframe::App for ZgadnijSlowo {
         });
         let xoxo = ctx.screen_rect().size().x;
         egui::Area::new(egui::Id::new("Wygrana_tekst"))
-            .fixed_pos(pos2((xoxo / 2.) - 100., 220.))
+            .fixed_pos(pos2((xoxo / 2.) - 100., 200.))
             .default_size(egui::Vec2::new(100., 100.))
             .show(ctx, |ui| {
                 // ui.add(egui::Label::new(RichText::new("LOL!!!!!!!!!!").size(20.)));
