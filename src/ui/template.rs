@@ -1,4 +1,4 @@
-use eframe::emath::{pos2, vec2};
+// use eframe::emath::{pos2, vec2};
 // use eframe::emath::Vec2;
 use egui::{emath, Color32, RichText, TextEdit, Ui};
 use crate::ui::ui_defaults::ZgadnijSlowo;
@@ -7,8 +7,9 @@ use crate::ui::ui_defaults::ZgadnijSlowo;
 
 
 
-// Yeah, i know i can do that in loops etc,
-// but i wanna do that like that, coz i can
+// Yeah, I know I can do that in loops etc,
+// but I wanna do this like that, coz I can
+// I think loops need more memory etc
 
 
 pub fn templejt_3(proxy_self:&mut ZgadnijSlowo,ui:&mut Ui,ctx: &egui::Context,słowo:&str){

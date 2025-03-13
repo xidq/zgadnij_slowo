@@ -31,7 +31,7 @@ impl eframe::App for ZgadnijSlowo {
             ui.add_space(15.);
             ui.columns(3, |column| {
                 column[0].vertical_centered_justified(|ui| {
-                    if ui.add(egui::Button::new("Trzy litery").sense(Sense::click())).clicked() {
+                    if ui.add(egui::Button::new("Trzy litery").min_size(vec2(20.,50.)).sense(Sense::click())).clicked() {
                         self.tryb_gry = 3;
                         (self.wybór_słownictwa,self.podpowiedź) =
                             match losowe_słowo_3(){
@@ -47,10 +47,11 @@ impl eframe::App for ZgadnijSlowo {
                             Słowa::trzyliterowe().słowo[index]
                         }
                     }
+                    ui.add(egui::Label::new(RichText::new(format!("{} słów",Słowa::trzyliterowe().słowo.len()))).selectable(false));
                 });
                 let zzzz = Słowa::trzyliterowe().słowo[1];
                 column[1].vertical_centered_justified(|ui| {
-                    if ui.add(egui::Button::new("Cztery litery").sense(Sense::click())).clicked() {
+                    if ui.add(egui::Button::new("Cztery litery").min_size(vec2(20.,50.)).sense(Sense::click())).clicked() {
                         self.tryb_gry = 4;
 
                         (self.wybór_słownictwa,self.podpowiedź) =
@@ -66,9 +67,10 @@ impl eframe::App for ZgadnijSlowo {
                             Słowa::czteroliterowe().słowo[index]
                         }
                     }
+                    ui.add(egui::Label::new(RichText::new(format!("{} słów",Słowa::czteroliterowe().słowo.len()))).selectable(false));
                 });
                 column[2].vertical_centered_justified(|ui| {
-                    if ui.add(egui::Button::new("Pięć liter").sense(Sense::click())).clicked() {
+                    if ui.add(egui::Button::new("Pięć liter").min_size(vec2(20.,50.)).sense(Sense::click())).clicked() {
                         self.tryb_gry = 5;
                         (self.wybór_słownictwa,self.podpowiedź) =
                             match losowe_słowo_5(){
@@ -83,7 +85,13 @@ impl eframe::App for ZgadnijSlowo {
                             Słowa::pięcioliterowe().słowo[index]
                         }
                     }
+                    ui.add(egui::Label::new(RichText::new(format!("{} słów",Słowa::pięcioliterowe().słowo.len()))).selectable(false));
                 });
+            });
+            ui.add_space(10.);
+            ui.vertical_centered_justified(|ui|{
+                ui.label(RichText::new("Podpowiedzi są dodane przez AI,\njeżeli jest jakiś błąd, proszę o zgłoszenie").size(10.));
+                ui.label(RichText::new("Wszystkie wyrazy są zgodne z anglojęzycznymi scrabble\nniektóre są uznawane tylko w USA\nniektóre nie są uznawane w usa").size(10.));
             });
             ui.add_space(15.);
             // ui.put(egui::Rect::from_center_size(pos2(250., 350.), vec2(50., 50.)), egui::Label::new(RichText::new("lll").size(50.)));
@@ -92,7 +100,7 @@ impl eframe::App for ZgadnijSlowo {
         });
         let xoxo = ctx.screen_rect().size().x;
         egui::Area::new(egui::Id::new("Wygrana_tekst"))
-            .fixed_pos(pos2((xoxo / 2.) - 100., 120.))
+            .fixed_pos(pos2((xoxo / 2.) - 100., 220.))
             .default_size(egui::Vec2::new(100., 100.))
             .show(ctx, |ui| {
                 // ui.add(egui::Label::new(RichText::new("LOL!!!!!!!!!!").size(20.)));
@@ -107,15 +115,19 @@ impl eframe::App for ZgadnijSlowo {
             });
 
         egui::Area::new(egui::Id::new("podpowiedź"))
-            .fixed_pos(pos2((xoxo / 2.) - 100., 180.))
+            .fixed_pos(pos2((xoxo / 2.) - 100., 250.))
             .default_size(egui::Vec2::new(100., 100.))
             .show(ctx, |ui| {
                 // ui.add(egui::Label::new(RichText::new("LOL!!!!!!!!!!").size(20.)));
                 ui.allocate_space(egui::Vec2::new(250., 50.));
-                match &self.podpowiedź_toggle{
-                    true => {ui.add(egui::Label::new(RichText::new(self.podpowiedź).size(16.)));},
-                    false=>{ui.add(egui::Label::new(RichText::new("Naciśnij Ctrl + H po podpowiedź").size(16.))); }
-                }
+                ui.horizontal_centered(|ui|{
+                    match &self.podpowiedź_toggle{
+                        true => {ui.add(egui::Label::new(RichText::new(
+                            if !self.podpowiedź.is_empty(){format!("hint:\n{}",self.podpowiedź)}else{"Najpierw rozpocznij".to_string()}
+                        ).italics().size(16.)).wrap());},
+                        false => {ui.add(egui::Label::new(RichText::new("Naciśnij Ctrl + H po podpowiedź".to_string()).size(16.))); }
+                    }
+                });
 
             });
 
@@ -124,14 +136,11 @@ impl eframe::App for ZgadnijSlowo {
 
         let szerokość_zgadywanki = self.tryb_gry as f32 * 32.5;
         egui::Area::new(egui::Id::new("gra"))
-            .fixed_pos(egui::pos2((xoxo / 2.) - (szerokość_zgadywanki / 2.), 300.0))
+            .fixed_pos(egui::pos2((xoxo / 2.) - (szerokość_zgadywanki / 2.), 400.0))
             .default_size(egui::Vec2::new(120.0, 100.0))
             .movable(false)
             .show(ctx, |ui| {
-                match self.debug{
-                    true => {ui.label(self.wybór_słownictwa);},
-                    false => {}
-                }
+                if self.debug{ui.label(self.wybór_słownictwa);}
 
                 match self.tryb_gry {
                     3 => { templejt_3(self, ui, ctx, self.wybór_słownictwa); },

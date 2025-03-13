@@ -7,7 +7,7 @@ mod ui;
 fn main() {
     let native_options = NativeOptions{
         viewport: egui::ViewportBuilder::default()
-            .with_inner_size((350.,600.)),
+            .with_inner_size((350.,700.)),
         ..eframe::NativeOptions::default()
     };
 
