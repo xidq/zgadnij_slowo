@@ -3,6 +3,7 @@
 use eframe::NativeOptions;
 
 mod ui;
+mod test_slownikow;
 
 fn main() {
     let native_options = NativeOptions{
