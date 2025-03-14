@@ -11452,7 +11452,7 @@ impl Wybieranie for Słowa {
                 ("sulfa", "referring to sulfonamides, a group of drugs used to treat bacterial infections"),
                 ("sulfo", "relating to sulfur or sulfonic acid compounds"),
                 ("sulks", "plural of sulk, meaning to be silent or gloomy due to displeasure"),
-                ("sulky", "moody, bad-tempered, or showing displeasure through silence or pouting")
+                ("sulky", "moody, bad-tempered, or showing displeasure through silence or pouting"),
                 ("sully", "to tarnish or damage the reputation or appearance of something"),
                 ("sulph", "a variant of sulfur, referring to the chemical element"),
                 ("sulus", "a rare term, could refer to an old or uncommon name or place"),
