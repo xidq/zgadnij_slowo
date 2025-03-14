@@ -10639,3 +10639,23 @@ impl Wybieranie for Słowa {
         }
     }
 }
+
+
+
+
+#[cfg(test)]
+mod xoxo {
+    use super::*;
+    #[test]
+    fn sprawdz_czy_5_sie_zgadza(){
+        let mut ilość_błędów:u32 = 0;
+        for bbb in Słowa::pięcioliterowe().słowo[1]{
+            if bbb.len !=5{
+                println!(format!("{} ma {} liter",bbb, bbb.len()));
+                ilość_błędów += 1;
+            }
+        }
+        assertEq!(ilość_błędów,0u32);
+        
+    }
+}
