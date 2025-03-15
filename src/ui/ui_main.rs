@@ -3,7 +3,7 @@ use rand::Rng;
 use crate::ui::reset::reset_wsio;
 use crate::ui::slowniki::{Słowa, Wybieranie};
 // use egui::WidgetText::RichText;
-use crate::ui::template::{templejt_3, templejt_4, templejt_5};
+use crate::ui::template::templejt;
 use crate::ui::ui_defaults::ZgadnijSlowo;
 
 impl eframe::App for ZgadnijSlowo {
@@ -143,9 +143,9 @@ impl eframe::App for ZgadnijSlowo {
                 if self.debug{ui.label(self.wybór_słownictwa);}
 
                 match self.tryb_gry {
-                    3 => { templejt_3(self, ui, ctx, self.wybór_słownictwa); },
-                    4 => { templejt_4(self, ui, ctx, self.wybór_słownictwa); },
-                    5 => { templejt_5(self, ui, ctx, self.wybór_słownictwa); },
+                    3 => { templejt(self, ui, ctx, self.wybór_słownictwa,3); },
+                    4 => { templejt(self, ui, ctx, self.wybór_słownictwa,4); },
+                    5 => { templejt(self, ui, ctx, self.wybór_słownictwa,5); },
                     _ => {}
                 }
             });
